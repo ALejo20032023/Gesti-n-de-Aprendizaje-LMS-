@@ -1,0 +1,39 @@
+﻿<Page x:Class="GestionAprendisaje.UsuariosWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Usuarios" Height="700" Width="1300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DataGrid x:Name="UsuariosGrid" Grid.Row="0" AutoGenerateColumns="False" Margin="8,85,8,24" SelectionChanged="UsuariosGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" />
+                <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding FechaRegistro}" />
+                <DataGridTextColumn Header="Foto" Binding="{Binding Foto}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,0,0,555" Width="1011">
+            <Label Content="Nombre:" VerticalAlignment="Center" />
+            <TextBox x:Name="TxtNombre" Width="200" VerticalAlignment="Center" Margin="5" />
+
+            <Label Content="Email:" VerticalAlignment="Center" />
+            <TextBox x:Name="TxtEmail" Width="200" VerticalAlignment="Center" Margin="5" />
+
+            <Label Content="Fecha de Registro:" VerticalAlignment="Center" />
+            <DatePicker x:Name="FechaRegistroPicker" Width="150" VerticalAlignment="Center" Margin="5" />
+
+            <Label Content="Foto:" VerticalAlignment="Center" />
+            <TextBox x:Name="TxtFoto" Width="200" VerticalAlignment="Center" Margin="5" />
+
+            <Button x:Name="BtnAgregar" Content="Agregar Usuario" Click="BtnAgregar_Click" Width="150" Margin="5" />
+            <Button x:Name="BtnEliminar" Content="Eliminar Usuario" Click="BtnEliminar_Click" Width="150" Margin="5" />
+            <Button x:Name="BtnActualizar" Content="Actualizar Usuario" Click="BtnActualizar_Click" Width="150" Margin="5" />
+        </WrapPanel>
+    </Grid>
+</Page>
